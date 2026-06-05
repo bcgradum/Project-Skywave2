@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: dark; }
+  html, body { background: #040712; color: #F5F7FA; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  body {
+    background:
+      radial-gradient(ellipse at top, rgba(91,141,239,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(168,85,247,0.06) 0%, transparent 50%),
+      #040712;
+    background-attachment: fixed;
+  }
+  ::selection { background: rgba(91,141,239,0.35); color: #fff; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
+}
+
+@layer components {
+  .card { @apply rounded-xl border border-line bg-bg-surface/60 backdrop-blur-sm p-4 shadow-card; }
+  .card-glow { @apply card border-accent/30 shadow-glow; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold border border-line-strong bg-bg-elev text-text transition-all hover:bg-bg-surface; }
+  .btn-primary { @apply btn border-accent bg-accent text-white hover:bg-accent-glow shadow-glow-sm; }
+  .btn-ghost { @apply btn border-transparent bg-transparent text-text-muted hover:bg-bg-elev hover:text-text; }
+  .btn-danger { @apply btn border-bad/40 text-bad hover:bg-bad/10; }
+  .btn-sm { @apply px-2.5 py-1.5 text-xs; }
+  .btn-xs { @apply px-2 py-1 text-[11px] rounded-md; }
+  .field-input { @apply w-full rounded-lg border border-line bg-bg-input px-3 py-2 text-sm text-text placeholder-text-dim outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full bg-bg-elev px-2 py-0.5 text-[11px] font-semibold text-text-muted border border-line; }
+  .chip-accent { @apply chip bg-accent-soft border-accent/30 text-accent-glow; }
+  .nav-label { @apply text-[10px] uppercase tracking-widest text-text-dim font-bold px-2 mb-1; }
+  .nav-item { @apply flex items-center gap-3 px-3 py-2 rounded-lg text-text-muted font-medium cursor-pointer transition-all hover:bg-bg-elev hover:text-text; }
+  .nav-item-active { @apply bg-accent-soft text-accent-glow border border-accent/20; }
+  .skywave-mark { background: linear-gradient(135deg, #5B8DEF 0%, #a855f7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; letter-spacing: -0.02em; }
+}
