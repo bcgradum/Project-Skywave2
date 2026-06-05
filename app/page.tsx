@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { type JSX, useState } from "react";
 import { Shell, type Route } from "@/components/Shell";
 import { CommandCenter } from "@/components/CommandCenter";
 import { Wizard } from "@/components/Wizard";
